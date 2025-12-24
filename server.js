@@ -1,12 +1,10 @@
-import express from "express"
-import fs from "fs/promises"
-import dotenv from "dotenv"
-import {readStudents} from "./data/students.json"
-import router from "./routers"
-dotenv.config()
+import express from "express";
+import dotenv from "dotenv";
+import router from "./routers.js";
+dotenv.config();
 const app = express();
-app.use('/',router)
+app.use(express.json());
+app.use("/", router);
 const PORT = process.env.PORT || 3000;
-
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
