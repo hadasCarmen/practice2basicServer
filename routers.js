@@ -9,6 +9,10 @@ import {
 const router = express.Router();
 
 router.route("/student").get(readStudentsServer).post(addStudent);
-router.route("/student/:id").get(findStudent).put(updateStudent).delete(deleteStudent);
+router
+  .route("/student/:id")
+  .get(findStudent)
+  .put(updateStudent)
+  .delete(deleteStudent);
 
 export default router;
